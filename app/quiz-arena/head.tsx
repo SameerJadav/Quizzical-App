@@ -11,7 +11,7 @@ export default function Head() {
       <meta name="google" content="notranslate" />
       <meta name="google" content="nocrtrans" />
 
-      <title>Quizzical</title>
+      <title>Quiz Arena</title>
       <meta name="author" content="Sameer Jadav" />
       <meta
         name="description"
