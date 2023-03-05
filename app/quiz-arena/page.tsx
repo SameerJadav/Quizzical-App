@@ -6,6 +6,10 @@ interface Quiz {
   incorrect_answers: string[];
 }
 
+export const metadata = {
+  title: "Quiz Aerena",
+};
+
 export default async function Home() {
   // fetch data from API
   const res = await fetch(
