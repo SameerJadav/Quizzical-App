@@ -1,5 +1,12 @@
 import "./globals.css";
+import { Inter } from "next/font/google";
+import clsx from "clsx";
 // import type { Metadata } from "next";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 // export const metadata: Metadata = {};
 export const metadata = {
@@ -56,9 +63,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={clsx("bg-gray-900 text-white", inter.className)}>
       <head />
-      <body className="bg-gray-900 text-white">{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
