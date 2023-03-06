@@ -65,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx("bg-gray-900 text-white", inter.className)}>
       <head />
-      <body className="antialiased">{children}</body>
+      <body className="relative antialiased">{children}</body>
     </html>
   );
 }
