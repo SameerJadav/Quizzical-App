@@ -26,27 +26,27 @@ export default async function Home() {
     .slice(0, 5);
 
   return (
-    <main className="w-full divide-y-2 divide-solid divide-gray-700 p-4 md:p-0">
+    <main className="min-h-screen divide-y-2 divide-solid divide-gray-700 p-4">
       {shuffledQuizzes.map((quiz: Quiz) => (
-        <div className=" mx-auto mb-4 max-w-5xl">
+        <div className="mx-auto mb-4 max-w-5xl">
           {/* Questions */}
           <h2
-            className="my-4 text-lg font-medium"
+            className="my-2 text-lg font-medium"
             dangerouslySetInnerHTML={{ __html: quiz.question }}
           />
 
           {/* Options */}
-          <ul className="mb-4 flex flex-col gap-5 text-center md:flex-row">
+          <ul className="mb-4 flex flex-col gap-4 text-center md:flex-row">
             {/* Correct answer */}
             <li
-              className="min-w-[8rem] cursor-pointer rounded-lg border-2 border-teal-500 p-2 shadow-sm shadow-teal-300 transition-all hover:scale-105 hover:border-teal-300"
+              className="min-w-[8rem] cursor-pointer rounded-lg border-2 border-teal-500 p-2 transition-all hover:scale-105 hover:border-teal-200"
               dangerouslySetInnerHTML={{ __html: quiz.correct_answer }}
             />
 
             {/* Incorrect answers */}
             {quiz.incorrect_answers.map((answer) => (
               <li
-                className="min-w-[8rem] cursor-pointer rounded-lg border-2 border-teal-500 p-2 shadow-sm shadow-teal-300 transition-all hover:scale-105 hover:border-teal-300"
+                className="min-w-[8rem] cursor-pointer rounded-lg border-2 border-teal-500 p-2 transition-all hover:scale-105 hover:border-teal-200"
                 dangerouslySetInnerHTML={{ __html: answer }}
               />
             ))}
@@ -56,9 +56,12 @@ export default async function Home() {
 
       <div className="mx-auto flex max-w-5xl items-center justify-center gap-4 pt-4">
         <p className="text-lg">Your score is {score}/5</p>
-        <button className="rounded-lg bg-teal-400 py-2 px-4 text-lg transition-all hover:scale-105 hover:bg-teal-500">
+        <a
+          href="/quiz-arena"
+          className="rounded-lg bg-teal-400 py-2 px-4 text-lg font-medium transition-all hover:scale-105 hover:bg-teal-500"
+        >
           Play Again
-        </button>
+        </a>
       </div>
     </main>
   );
